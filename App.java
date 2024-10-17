@@ -107,6 +107,7 @@ public class App {
             }
 
         }while(salir==0);
+        sc.close();;
     }
 
 

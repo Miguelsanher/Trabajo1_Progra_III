@@ -1,6 +1,5 @@
 package misClases;
 
-import java.util.ArrayList;
 
 public class Almacen{
     private Libro[] libros; // declaracion pero no iniciacion
