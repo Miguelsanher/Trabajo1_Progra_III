@@ -4,7 +4,7 @@ public class App {
     public static void main(String [] args){
         int salir=0;
         Scanner sc = new Scanner(System.in);
-        int tamAlmacen;
+        int tamAlmacen=2;
         int pagMinuto=1;
         int minTotales=0;
         float precioTotal=0;
@@ -21,7 +21,7 @@ public class App {
         float precio;
 
         //recipientes
-        Almacen alm = new Almacen(2); //le pongo dos libros por defecto
+        Almacen alm = new Almacen(tamAlmacen); //le pongo dos libros por defecto
         Libro libro= new Libro(); //ponemos un objeto libro que usaremos luego para referenciar
         Autor autor= new Autor(); // usaremo esto tambien como recipiente
 
@@ -39,6 +39,7 @@ public class App {
                 System.out.printf("\nIntroduzca las paginas por minuto: ");
                 pagMinuto= sc.nextInt();
             }else if(opcion==3){
+                if(!(alm.getNum_libros_almacenados()>=alm.getTam())){
                 //primero hacemos al autor
                 System.out.printf("\nIntroduce el nomnbre del autor: ");
                 nombreAutor=sc.nextLine();
@@ -64,6 +65,9 @@ public class App {
 
                 //ahora lo metemos en el almacen que se guardara su referencia
                 alm.introducirLibro(libro);
+                }else{
+                    System.out.println("Esta lleno el almacen");
+                }
 
             }else if(opcion==4){
                 //momento hacer el display
@@ -98,6 +102,8 @@ public class App {
                 System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
             }else if(opcion==5){
                 salir=1;
+            }else{
+                System.out.println("Teclea un numero válido");
             }
 
         }while(salir==0);
