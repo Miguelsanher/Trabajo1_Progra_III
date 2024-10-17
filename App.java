@@ -97,8 +97,8 @@ public class App {
                     precioTotal+=libro2.getPrecio();
                 }
                 System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.printf("| Tiempo de lectura total del almacén: %-10d min                                                                                                 |\n",minTotales );
-                System.out.printf("| Valor total del almacén: %-9.3f$                                                                                                                 |\n", precioTotal);
+                System.out.printf("| Tiempo de lectura total del almacén:                                                                               %-10d min                   |\n",minTotales );
+                System.out.printf("| Valor total del almacén:                                                                                                                  %-9.3f$|\n", precioTotal);
                 System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
             }else if(opcion==5){
                 salir=1;
