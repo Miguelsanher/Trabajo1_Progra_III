@@ -71,12 +71,12 @@ public class App {
 
             }else if(opcion==4){
                 //momento hacer el display
-                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println("| LIBROS EN EL ALMACÉN                                                                                                                                |");
-                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s | %-10s|\n", 
+                System.out.println("|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|");;
+                System.out.println("| LIBROS EN EL ALMACÉN                                                                                                                                                    |");
+                System.out.println("|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.printf("| %-30s | %-20s | %-30s | %-20s | %-20s | %-20s | %-10s|\n", 
                 "Titulo","Año publicacion","Autor","Premio planeta","Paginas","Tiempo lectura min","Precio");
-                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println("|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|");
                 
                 /*Libro [] libros = alm.getLibros();
                 for(Libro libro2 : libros){
@@ -91,15 +91,15 @@ public class App {
                 for(int i=0;i<alm.getNum_libros_almacenados();i++){
                     Libro libro2 = libros[i];
                     autor= libro2.getAutor();
-                    System.out.printf("| %-20s | %-20d | %-20s | %-20b | %-20d | %-20d | %-9.3f%s|\n", libro2.getTitulo(),libro2.getAnoPublicacion(),autor.getNombre()+" "+autor.getApellidos(),autor.isPremioPlaneta(),libro2.getNum_pag()
+                    System.out.printf("| %-30s | %-20d | %-30s | %-20b | %-20d | %-20d | %-9.3f%s|\n", libro2.getTitulo(),libro2.getAnoPublicacion(),autor.getNombre()+" "+autor.getApellidos(),autor.isPremioPlaneta(),libro2.getNum_pag()
                     ,(libro2.getNum_pag()*pagMinuto),libro2.getPrecio(),"$");
                     minTotales+=libro2.getNum_pag()*pagMinuto;
                     precioTotal+=libro2.getPrecio();
                 }
-                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.printf("| Tiempo de lectura total del almacén:                                                                               %-10d min                   |\n",minTotales );
-                System.out.printf("| Valor total del almacén:                                                                                                                  %-9.3f$|\n", precioTotal);
-                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println("|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.printf("| Tiempo de lectura total del almacén:                                                                                                   %-10d min                   |\n",minTotales );
+                System.out.printf("| Valor total del almacén:                                                                                                                                      %-9.3f$|\n", precioTotal);
+                System.out.println("|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|");
             }else if(opcion==5){
                 salir=1;
             }else{
