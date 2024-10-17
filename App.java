@@ -17,7 +17,7 @@ public class App {
         int anoPublicacion;
         int num_pag;
         float precio;
-
+        
         //recipientes
         Almacen alm = new Almacen(2); //le pongo dos libros por defecto
         Libro libro= new Libro(); //ponemos un objeto libro que usaremos luego para referenciar
