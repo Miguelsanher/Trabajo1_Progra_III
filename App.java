@@ -91,7 +91,7 @@ public class App {
                 for(int i=0;i<alm.getNum_libros_almacenados();i++){
                     Libro libro2 = libros[i];
                     autor= libro2.getAutor();
-                    System.out.printf("| %-20s | %-20d | %-20s | %-20b | %-20d | %-20d | %-9.3f%s|\n", libro2.getTitulo(),libro2.getAnoPublicacion(),autor.getNombre(),autor.isPremioPlaneta(),libro2.getNum_pag()
+                    System.out.printf("| %-20s | %-20d | %-20s | %-20b | %-20d | %-20d | %-9.3f%s|\n", libro2.getTitulo(),libro2.getAnoPublicacion(),autor.getNombre()+" "+autor.getApellidos(),autor.isPremioPlaneta(),libro2.getNum_pag()
                     ,(libro2.getNum_pag()*pagMinuto),libro2.getPrecio(),"$");
                     minTotales+=libro2.getNum_pag()*pagMinuto;
                     precioTotal+=libro2.getPrecio();
