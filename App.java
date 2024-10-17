@@ -32,12 +32,16 @@ public class App {
 
             if(opcion==1){
                 System.out.printf("\nIntroduce el tamaño del almacen: ");
+
                 tamAlmacen= sc.nextInt();
-                sc.nextLine();
+                sc.nextLine(); //lipiamos buffer
+
                 alm = new Almacen(tamAlmacen); //perdemos la referencia del anterior almacen
             }else if(opcion==2){
                 System.out.printf("\nIntroduzca las paginas por minuto: ");
                 pagMinuto= sc.nextInt();
+                sc.nextLine(); //lipiamos buffer
+
             }else if(opcion==3){
                 if(!(alm.getNum_libros_almacenados()>=alm.getTam())){
                 //primero hacemos al autor
@@ -47,12 +51,12 @@ public class App {
                 apellidos=sc.nextLine();
                 System.out.printf("\nTiene premio planeta (true/false)? " );
                 premioPlaneta=sc.nextBoolean();
+                sc.nextLine(); //lipiamos buffer
                 //creamos el autor
                 autor=new Autor(nombreAutor, apellidos, premioPlaneta);
 
                 //ahora hacemos el libro
                 System.out.printf("\nIntroduce el titulo del libro: ");
-                sc.nextLine(); //barrido de buffer
                 titulo=sc.nextLine();
                 System.out.printf("\nIntroduce el año de publicacion del libro: ");
                 anoPublicacion=sc.nextInt();
@@ -60,6 +64,7 @@ public class App {
                 num_pag=sc.nextInt();
                 System.out.printf("\nIntroduce el precio del libro: ");
                 precio=sc.nextFloat();
+                sc.nextLine(); //lipiamos buffer
                 //creamos el libro
                 libro= new Libro(autor, titulo, anoPublicacion, num_pag, precio);
 
