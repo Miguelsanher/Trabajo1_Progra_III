@@ -75,7 +75,7 @@ public class App {
                 System.out.println("| LIBROS EN EL ALMACÉN                                                                                                                                |");
                 System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s | %-10s|\n", 
-                "Titulo","Año publicacion","Autor","Premio planeta","Paginas","Tiempo lectura","Precio");
+                "Titulo","Año publicacion","Autor","Premio planeta","Paginas","Tiempo lectura min","Precio");
                 System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
                 
                 /*Libro [] libros = alm.getLibros();
