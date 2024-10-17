@@ -6,6 +6,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int tamAlmacen;
         int pagMinuto=1;
+        int minTotales=0;
+        float precioTotal=0;
 
         //cosas del autor
         String nombreAutor;
@@ -17,7 +19,7 @@ public class App {
         int anoPublicacion;
         int num_pag;
         float precio;
-        
+
         //recipientes
         Almacen alm = new Almacen(2); //le pongo dos libros por defecto
         Libro libro= new Libro(); //ponemos un objeto libro que usaremos luego para referenciar
@@ -64,7 +66,36 @@ public class App {
                 alm.introducirLibro(libro);
 
             }else if(opcion==4){
-
+                //momento hacer el display
+                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println("| LIBROS EN EL ALMACÉN                                                                                                                                |");
+                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s | %-10s|\n", 
+                "Titulo","Año publicacion","Autor","Premio planeta","Paginas","Tiempo lectura","Precio");
+                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+                
+                /*Libro [] libros = alm.getLibros();
+                for(Libro libro2 : libros){
+                    autor= libro2.getAutor(); //cojemos la info del autor para tenerlo todo
+                    System.out.printf("| %-20s   %-20d   %-20s   %-20b   %-20d   %-20d   %-10.3f\n", libro2.getTitulo(),libro2.getAnoPublicacion(),autor.getNombre(),autor.isPremioPlaneta(),libro2.getNum_pag()
+                    ,(libro2.getNum_pag()*pagMinuto),libro2.getPrecio());
+                }*/ //esto estaria bien si lo hicieramos en una coleccion pero si no no, ya que se nos puede colar algun elemento nulo
+                
+                Libro [] libros= alm.getLibros();
+                minTotales=0;
+                precioTotal=0;
+                for(int i=0;i<alm.getNum_libros_almacenados();i++){
+                    Libro libro2 = libros[i];
+                    autor= libro2.getAutor();
+                    System.out.printf("| %-20s | %-20d | %-20s | %-20b | %-20d | %-20d | %-9.3f%s|\n", libro2.getTitulo(),libro2.getAnoPublicacion(),autor.getNombre(),autor.isPremioPlaneta(),libro2.getNum_pag()
+                    ,(libro2.getNum_pag()*pagMinuto),libro2.getPrecio(),"$");
+                    minTotales+=libro2.getNum_pag()*pagMinuto;
+                    precioTotal+=libro2.getPrecio();
+                }
+                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.printf("| Tiempo de lectura total del almacén: %-10d min                                                                                                 |\n",minTotales );
+                System.out.printf("| Valor total del almacén: %-9.3f$                                                                                                                 |\n", precioTotal);
+                System.out.println("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
             }else if(opcion==5){
                 salir=1;
             }
